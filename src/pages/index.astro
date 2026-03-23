@@ -1,7 +1,16 @@
 ---
+import { Button } from "@/components/ui/button";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Esta é a página principal</h1>
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-2">
+      <h1 class="text-3xl font-semibold">Este é um título</h1>
+      <p>Este é um parágrafo</p>
+    </div>
+    <div>
+      <Button>Este é um botão</Button>
+    </div>
+  </div>
 </BaseLayout>
