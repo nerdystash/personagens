@@ -1,10 +1,10 @@
 import {Card} from "./ui/card";
 
-type ImagemPersonagemProps = {
+type CharacterImageProps = {
     imageUrl: string
 }
 
-const ImagemPersonagem = ({imageUrl}: ImagemPersonagemProps) => {
+const CharacterImage = ({imageUrl}: CharacterImageProps) => {
     return <Card className="relative mx-auto w-full max-w-sm pt-0">
       <img
         src={imageUrl}
@@ -13,4 +13,4 @@ const ImagemPersonagem = ({imageUrl}: ImagemPersonagemProps) => {
     </Card>
 }
 
-export default ImagemPersonagem;
+export default CharacterImage;

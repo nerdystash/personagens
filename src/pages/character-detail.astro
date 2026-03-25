@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CharacterImage from "../components/CharacterImage";
+import Description from "../components/Description";
+---
+
+<BaseLayout>
+  <div>
+    <CharacterImage
+      imageUrl="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Mabel-Pines.Gravity-Falls.webp"
+    />
+  </div>
+  <Description
+    nome="Mabel Pines"
+    descricao='Mabel é uma menina de 12 anos de idade, energética (ela e seu irmão completam 13 no final do final da série) que com seu irmão vão passar suas férias de verão na armadilha para turistas de seu tio-avô, chamada de "Cabana do Mistério".'
+    serie="Gravity Falls"
+    criador="Alex Hirsch"
+  />
+</BaseLayout>
