@@ -13,11 +13,19 @@ import { useEffect, useState } from "react";
 const Form = () => {
   const [character, setCharacter] = useState({});
 
-  useEffect(() => {
-    console.log(character);
-  }, [character]);
+  const saveCharacter = async () => {
+    const response = await fetch("/api/characters", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(character),
+    });
 
-  const saveCharacter = () => {};
+    if (response.ok) {
+      window.location.href = "/personagens";
+    }
+  };
 
   return (
     <div className="flex flex-col gap-8">
