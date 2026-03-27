@@ -20,15 +20,12 @@ export const POST = (async ({ request }) => {
   );
 }) satisfies APIRoute;
 
-export const GET = (({ params, request }) => {
-  // TODO: listar os personagens cadastrados no banco de dados e retornar no response
-  // https://docs.astro.build/en/guides/astro-db/
-  // olhar o método .select
+export const GET = (async () => {
+  const characters = await db.select().from(Character);
 
   return new Response(
     JSON.stringify({
-      // Retornar os resultados aqui usando JSON.stringify, igual no post
-      chracters: [],
+      characters: characters,
     }),
   );
 }) satisfies APIRoute;
