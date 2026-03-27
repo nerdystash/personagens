@@ -1,14 +1,25 @@
-import { Card, CardHeader, CardDescription, CardFooter, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from "./ui/card";
 import { Button } from "./ui/button";
 
 type ListItemProps = {
-    title: string, 
-    description: string, 
-    imageUrl: string
-}
+  title: string;
+  description: string;
+  imageUrl: string;
+};
 
-const ListItem = ({title, description, imageUrl}: ListItemProps) => {
-    return <Card className="relative mx-auto w-full max-w-sm pt-0">
+const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
+  const showCharacter = () => {
+    window.location.href = "/character-detail";
+  };
+
+  return (
+    <Card className="relative mx-auto w-full pt-0">
       <img
         src={imageUrl}
         alt={title}
@@ -19,9 +30,12 @@ const ListItem = ({title, description, imageUrl}: ListItemProps) => {
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">Ver mais</Button>
+        <Button onClick={showCharacter} className="w-full cursor-pointer">
+          Ver mais
+        </Button>
       </CardFooter>
     </Card>
-}
+  );
+};
 
 export default ListItem;
