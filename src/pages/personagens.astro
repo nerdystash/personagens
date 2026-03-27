@@ -6,18 +6,27 @@ import ListItem from "../components/ListItem";
 const chamada = await fetch(new URL("/api/characters", Astro.url));
 const data = await chamada.json();
 const characters = data.characters;
+
+// TODO: criar caixa texto que, quando você digita alguma coisa, filtra os resultados exibidos, mostrando apenas os itens cujo name seja exatamente igual ao texto digitado (independente da letra maiuscula ou minuscula).
+
+// Dica: evento onChange pode te ajudar
+
+// Usar método filter do javascript na variável characters -> characters.filter
 ---
 
 <BaseLayout>
-  {
-    characters.map((character) => {
-      return (
-        <ListItem
-          title={character.name}
-          description={character.description}
-          imageUrl={character.imageUrl}
-        />
-      );
-    })
-  }
+  <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+    {
+      characters.map((character: any) => {
+        return (
+          <ListItem
+            client:load
+            title={character.name}
+            description={character.description}
+            imageUrl={character.imageUrl}
+          />
+        );
+      })
+    }
+  </div>
 </BaseLayout>
