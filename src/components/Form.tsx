@@ -87,7 +87,14 @@ const Form = () => {
         </FieldSet>
       </div>
       <div className="flex justify-end gap-4">
-        <Button variant="outline">Cancelar</Button>
+        <Button
+          variant="outline"
+          onClick={() => {
+            window.location.href = "personagens";
+          }}
+        >
+          Cancelar
+        </Button>
         <Button onClick={() => saveCharacter()}>Cadastrar</Button>
       </div>
     </div>
