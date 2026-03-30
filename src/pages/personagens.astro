@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ListItem from "../components/ListItem";
+import { Button } from "@/components/ui/button";
 
 // substituir o mock abaixo por uma chamada para a API de characters (GET). Armazenar o retorno na variavavel characters.
 const chamada = await fetch(new URL("/api/characters", Astro.url));
@@ -15,18 +16,25 @@ const characters = data.characters;
 ---
 
 <BaseLayout>
-  <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
-    {
-      characters.map((character: any) => {
-        return (
-          <ListItem
-            client:load
-            title={character.name}
-            description={character.description}
-            imageUrl={character.imageUrl}
-          />
-        );
-      })
-    }
+  <div class="gap-4">
+    <div class="flex justify-end m-6">
+      <a href="/character-form">
+        <Button>Novo personagem</Button>
+      </a>
+    </div>
+    <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+      {
+        characters.map((character: any) => {
+          return (
+            <ListItem
+              client:load
+              title={character.name}
+              description={character.description}
+              imageUrl={character.imageUrl}
+            />
+          );
+        })
+      }
+    </div>
   </div>
 </BaseLayout>
