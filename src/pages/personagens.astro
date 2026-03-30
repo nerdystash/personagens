@@ -1,14 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ListItem from "../components/ListItem";
-import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
 import CharacterList from "@/components/CharacterList";
-
-// TODO: criar caixa texto que, quando você digita alguma coisa, filtra os resultados exibidos, mostrando apenas os itens cujo name seja exatamente igual ao texto digitado (independente da letra maiuscula ou minuscula).
-// Dica: evento onChange pode te ajudar
-// Usar método filter do javascript na variável characters -> characters.filter
 
 const filterCharacters = (event: any) => {
   const value = event.target.value;
@@ -17,21 +9,5 @@ const filterCharacters = (event: any) => {
 ---
 
 <BaseLayout>
-  <div class="gap-4">
-    <div class="w-full">
-      <Field>
-        <Input
-          className="bg-gray-50"
-          placeholder="Pesquisa"
-          onChange={filterCharacters}
-        />
-      </Field>
-    </div>
-    <div class="flex justify-end m-6">
-      <a href="/character-form">
-        <Button>Novo personagem</Button>
-      </a>
-    </div>
-    <CharacterList client:load />
-  </div>
+  <CharacterList client:load />
 </BaseLayout>
