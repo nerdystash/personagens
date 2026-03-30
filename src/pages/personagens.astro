@@ -1,40 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ListItem from "../components/ListItem";
-import { Button } from "@/components/ui/button";
+import CharacterList from "@/components/CharacterList";
 
-// substituir o mock abaixo por uma chamada para a API de characters (GET). Armazenar o retorno na variavavel characters.
-const chamada = await fetch(new URL("/api/characters", Astro.url));
-const data = await chamada.json();
-const characters = data.characters;
-
-// TODO: criar caixa texto que, quando você digita alguma coisa, filtra os resultados exibidos, mostrando apenas os itens cujo name seja exatamente igual ao texto digitado (independente da letra maiuscula ou minuscula).
-
-// Dica: evento onChange pode te ajudar
-
-// Usar método filter do javascript na variável characters -> characters.filter
+const filterCharacters = (event: any) => {
+  const value = event.target.value;
+  console.log(value);
+};
 ---
 
 <BaseLayout>
-  <div class="gap-4">
-    <div class="flex justify-end m-6">
-      <a href="/character-form">
-        <Button>Novo personagem</Button>
-      </a>
-    </div>
-    <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
-      {
-        characters.map((character: any) => {
-          return (
-            <ListItem
-              client:load
-              title={character.name}
-              description={character.description}
-              imageUrl={character.imageUrl}
-            />
-          );
-        })
-      }
-    </div>
-  </div>
+  <CharacterList client:load />
 </BaseLayout>
