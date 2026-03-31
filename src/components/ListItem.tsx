@@ -25,7 +25,7 @@ const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
         alt={title}
         className="relative z-20 w-full object-cover"
       />
-      <CardHeader>
+      <CardHeader className="flex-1">
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>

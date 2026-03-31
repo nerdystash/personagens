@@ -1,8 +1,10 @@
 ---
+import SuccessMessage from "@/components/SuccessMessage";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CharacterList from "@/components/CharacterList";
 ---
 
 <BaseLayout>
+  <SuccessMessage message="Personagem cadastrado com sucesso!" client:load />
   <CharacterList client:load />
 </BaseLayout>
