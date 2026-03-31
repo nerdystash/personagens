@@ -27,7 +27,7 @@ const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
         className="relative z-20 w-full object-cover"
       />
       <CardHeader className="flex-1">
-        <FavoriteButton />
+        <FavoriteButton isFavorite={true} />
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
