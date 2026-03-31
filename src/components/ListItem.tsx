@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Button } from "./ui/button";
+import FavoriteButton from "./FavoriteButton";
 
 type ListItemProps = {
   title: string;
@@ -26,6 +27,7 @@ const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
         className="relative z-20 w-full object-cover"
       />
       <CardHeader className="flex-1">
+        <FavoriteButton />
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
