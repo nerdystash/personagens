@@ -23,7 +23,7 @@ const Form = () => {
     });
 
     if (response.ok) {
-      window.location.href = "/personagens";
+      window.location.href = "/cadastro-sucesso";
     }
   };
 
