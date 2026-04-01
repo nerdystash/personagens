@@ -6,11 +6,11 @@ import {
   FieldTitle,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "../ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-const Form = () => {
+const CharacterForm = () => {
   const [character, setCharacter] = useState({});
 
   const saveCharacter = async () => {
@@ -23,7 +23,7 @@ const Form = () => {
     });
 
     if (response.ok) {
-      window.location.href = "/cadastro-sucesso";
+      window.location.href = "/characters/success";
     }
   };
 
@@ -113,7 +113,7 @@ const Form = () => {
           <Button
             variant="outline"
             onClick={() => {
-              window.location.href = "personagens";
+              window.location.href = "/characters";
             }}
           >
             Cancelar
@@ -125,4 +125,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CharacterForm;

@@ -1,25 +1,25 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import CharacterImage from "@/components/CharacterImage";
-import Description from "@/components/Description";
+import CharacterImage from "@/components/Character/CharacterImage";
+import Description from "@/components/Character/CharacterDescription";
 import { Button } from "@/components/ui/button";
 ---
 
 <BaseLayout>
   <div class="w-full">
     <div class="flex justify-end m-6">
-      <a href="/personagens">
+      <a href="/characters">
         <Button>Voltar</Button>
       </a>
     </div>
     <div class="flex">
-      <div class="basis-1/3" >
+      <div class="basis-1/3">
         <CharacterImage
           imageUrl="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Mabel-Pines.Gravity-Falls.webp"
         />
       </div>
       <div class="basis-2/3">
-        <Description 
+        <Description
           nome="Mabel Pines"
           descricao='Mabel é uma menina de 12 anos de idade, energética (ela e seu irmão completam 13 no final do final da série) que com seu irmão vão passar suas férias de verão na armadilha para turistas de seu tio-avô, chamada de "Cabana do Mistério".'
           serie="Gravity Falls"
