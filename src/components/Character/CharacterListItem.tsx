@@ -4,9 +4,9 @@ import {
   CardDescription,
   CardFooter,
   CardTitle,
-} from "./ui/card";
-import { Button } from "./ui/button";
-import FavoriteButton from "./FavoriteButton";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import FavoriteButton from "@/components/FavoriteButton";
 
 type ListItemProps = {
   title: string;
@@ -14,7 +14,7 @@ type ListItemProps = {
   imageUrl: string;
 };
 
-const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
+const CharacterListItem = ({ title, description, imageUrl }: ListItemProps) => {
   const showCharacter = () => {
     window.location.href = "/character-detail";
   };
@@ -40,4 +40,4 @@ const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
   );
 };
 
-export default ListItem;
+export default CharacterListItem;

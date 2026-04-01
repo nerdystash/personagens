@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ListItem from "./ListItem";
-import { Field } from "./ui/field";
-import { Input } from "./ui/input";
+import CharacterListItem from "./CharacterListItem";
+import { Field } from "../ui/field";
+import { Input } from "../ui/input";
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
@@ -55,7 +55,7 @@ const CharacterList = () => {
         <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
           {filteredCharacters.map((character: any) => {
             return (
-              <ListItem
+              <CharacterListItem
                 title={character.name}
                 description={character.description}
                 imageUrl={character.imageUrl}
