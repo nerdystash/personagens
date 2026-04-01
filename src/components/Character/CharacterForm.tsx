@@ -23,7 +23,7 @@ const CharacterForm = () => {
     });
 
     if (response.ok) {
-      window.location.href = "/cadastro-sucesso";
+      window.location.href = "/characters/success";
     }
   };
 
@@ -113,7 +113,7 @@ const CharacterForm = () => {
           <Button
             variant="outline"
             onClick={() => {
-              window.location.href = "personagens";
+              window.location.href = "/characters";
             }}
           >
             Cancelar
