@@ -2,20 +2,22 @@ import type { APIRoute } from "astro";
 import { Character, db } from "astro:db";
 
 export const POST = (async ({ request }) => {
-  const characterMock = {
-    name: "Mabel Pines",
-    description: `Mabel é uma menina de 12 anos de idade, energética (ela e seu irmão completam 13 no final do final da série) que com seu irmão vão passar suas férias de verão na armadilha para turistas de seu tio-avô, chamada de "Cabana do Mistério".`,
-    show: "Gravity Falls",
-    creators: "Alex Hirsch",
-    imageUrl:
-      "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Mabel-Pines.Gravity-Falls.webp",
+  const attributes = await request.json();
+
+  const newCharacter = {
+    name: attributes.name,
+    description: attributes.description,
+    show: attributes.show,
+    creators: attributes.creators,
+    imageUrl: attributes.imageUrl,
+    isFavorite: false,
   };
 
-  await db.insert(Character).values(characterMock);
+  await db.insert(Character).values(newCharacter);
 
   return new Response(
     JSON.stringify({
-      character: characterMock,
+      character: newCharacter,
     }),
   );
 }) satisfies APIRoute;
@@ -28,4 +30,12 @@ export const GET = (async () => {
       characters: characters,
     }),
   );
+}) satisfies APIRoute;
+
+export const PUT = (async ({ request }) => {
+  const { id, isFavorite } = await request.json();
+
+  // TODO: continuar implementação daqui
+
+  return new Response(JSON.stringify({}));
 }) satisfies APIRoute;
