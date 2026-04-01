@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardFooter,
   CardTitle,
-} from "./ui/card";
-import { Button } from "./ui/button";
+} from "../ui/card";
+import { Button } from "../ui/button";
 
 type ListItemProps = {
   title: string;
@@ -13,7 +13,7 @@ type ListItemProps = {
   imageUrl: string;
 };
 
-const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
+const CharacterListItem = ({ title, description, imageUrl }: ListItemProps) => {
   const showCharacter = () => {
     window.location.href = "/character-detail";
   };
@@ -38,4 +38,4 @@ const ListItem = ({ title, description, imageUrl }: ListItemProps) => {
   );
 };
 
-export default ListItem;
+export default CharacterListItem;

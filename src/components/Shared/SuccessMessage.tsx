@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { toast } from "sonner";
-import { Toaster } from "./ui/sonner";
+import { Toaster } from "../ui/sonner";
 
 type SuccessMessageProps = {
   message: string;
