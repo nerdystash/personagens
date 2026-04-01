@@ -7,6 +7,7 @@ const Character = defineTable({
     imageUrl: column.text(),
     name: column.text(),
     show: column.text(),
+    isFavorite: column.boolean(),
   },
 });
 

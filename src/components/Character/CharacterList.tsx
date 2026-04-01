@@ -59,6 +59,7 @@ const CharacterList = () => {
                 title={character.name}
                 description={character.description}
                 imageUrl={character.imageUrl}
+                isFavorite={character.isFavorite}
               />
             );
           })}

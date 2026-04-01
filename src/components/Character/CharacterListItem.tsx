@@ -6,15 +6,21 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import FavoriteButton from "@/components/FavoriteButton";
+import CharacterFavoriteButton from "@/components/Character/CharacterFavoriteButton";
 
 type ListItemProps = {
   title: string;
   description: string;
   imageUrl: string;
+  isFavorite: boolean;
 };
 
-const CharacterListItem = ({ title, description, imageUrl }: ListItemProps) => {
+const CharacterListItem = ({
+  title,
+  description,
+  imageUrl,
+  isFavorite,
+}: ListItemProps) => {
   const showCharacter = () => {
     window.location.href = "/character-detail";
   };
@@ -27,7 +33,7 @@ const CharacterListItem = ({ title, description, imageUrl }: ListItemProps) => {
         className="relative z-20 w-full object-cover"
       />
       <CardHeader className="flex-1">
-        <FavoriteButton isFavorite={true} />
+        <CharacterFavoriteButton isFavorite={isFavorite} />
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>

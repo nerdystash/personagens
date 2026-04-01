@@ -8,6 +8,7 @@ export default async function seed() {
     creators: "Alex Hirsch",
     imageUrl:
       "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Mabel-Pines.Gravity-Falls.webp",
+    isFavorite: true,
   };
 
   const characterDipper = {
@@ -17,6 +18,7 @@ export default async function seed() {
     creators: "Alex Hirsch",
     imageUrl:
       "https://static.wikia.nocookie.net/gravityfalls/images/0/08/S1e3_dipper's_keen_powers_of_observation.png/revision/latest?cb=20240514023236",
+    isFavorite: false,
   };
 
   await db.insert(Character).values(characterMabel);

@@ -1,11 +1,11 @@
 import { Heart } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 type FavoriteButtonProps = {
   isFavorite: boolean;
 };
 
-const FavoriteButton = (props: FavoriteButtonProps) => {
+const CharacterFavoriteButton = (props: FavoriteButtonProps) => {
   return (
     <div>
       <Button
@@ -20,4 +20,4 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
     </div>
   );
 };
-export default FavoriteButton;
+export default CharacterFavoriteButton;
