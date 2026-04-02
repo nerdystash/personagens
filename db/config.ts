@@ -2,6 +2,7 @@ import { column, defineDb, defineTable } from "astro:db";
 
 const Character = defineTable({
   columns: {
+    id: column.number({ primaryKey: true }),
     creators: column.text(),
     description: column.text(),
     imageUrl: column.text(),

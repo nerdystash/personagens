@@ -56,6 +56,7 @@ const CharacterList = () => {
           {filteredCharacters.map((character: any) => {
             return (
               <CharacterListItem
+                id={character.id}
                 title={character.name}
                 description={character.description}
                 imageUrl={character.imageUrl}

@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { Character, db } from "astro:db";
+import { Character, db, eq } from "astro:db";
 
 export const POST = (async ({ request }) => {
   const attributes = await request.json();
@@ -35,7 +35,14 @@ export const GET = (async () => {
 export const PUT = (async ({ request }) => {
   const { id, isFavorite } = await request.json();
 
-  // TODO: continuar implementação daqui
+  const character = await db
+    .select()
+    .from(Character)
+    .where(eq(Character.id, id));
 
-  return new Response(JSON.stringify({}));
+  const updateCharacter = await db
+    .update(Character)
+    .set({ ...character, isFavorite: isFavorite });
+
+  return new Response(JSON.stringify(updateCharacter));
 }) satisfies APIRoute;

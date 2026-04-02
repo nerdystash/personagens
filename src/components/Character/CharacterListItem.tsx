@@ -13,6 +13,7 @@ type ListItemProps = {
   description: string;
   imageUrl: string;
   isFavorite: boolean;
+  id: number;
 };
 
 const CharacterListItem = ({
@@ -20,6 +21,7 @@ const CharacterListItem = ({
   description,
   imageUrl,
   isFavorite,
+  id,
 }: ListItemProps) => {
   const showCharacter = () => {
     window.location.href = "/character-detail";
@@ -33,7 +35,7 @@ const CharacterListItem = ({
         className="relative z-20 w-full object-cover"
       />
       <CardHeader className="flex-1">
-        <CharacterFavoriteButton isFavorite={isFavorite} />
+        <CharacterFavoriteButton id={id} isFavorite={isFavorite} />
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
